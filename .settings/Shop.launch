@@ -11,6 +11,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="shop.Shop"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Apple Apple Orange Apple"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Apple Apple Orange Orange Orange Apple Apple"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CandidateExercise"/>
 </launchConfiguration>

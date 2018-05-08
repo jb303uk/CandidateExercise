@@ -37,5 +37,21 @@ public class ShopTest {
 		assertEquals(2.05,Prices.ListToTotal(testShopData),DELTA);
 
 	}
+	@Test
+	public void DiscountCheck() {
 
+		List<String> testShopData = new ArrayList<String>();
+		Shop jbShop = new Shop();
+		testShopData.add("apple");
+		testShopData.add("apple");
+		testShopData.add("orange");
+		testShopData.add("orange");
+		testShopData.add("orange");
+		testShopData.add("apple");
+		testShopData.add("apple");
+
+		jbShop.setStringList(testShopData);
+		assertEquals(1.70,Shop.getFinalPrice(),DELTA);
+
+	}
 }
