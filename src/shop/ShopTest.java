@@ -49,9 +49,21 @@ public class ShopTest {
 		testShopData.add("orange");
 		testShopData.add("apple");
 		testShopData.add("apple");
+		
+		jbShop.setStringList(testShopData);
+		assertEquals(1.45,jbShop.getDiscount(),DELTA);
+
+	}
+	@Test
+	public void NoDiscountCheck() {
+
+		List<String> testShopData = new ArrayList<String>();
+		Shop jbShop = new Shop();
+		testShopData.add("apple");
+		testShopData.add("orange");
 
 		jbShop.setStringList(testShopData);
-		assertEquals(1.70,Shop.getFinalPrice(),DELTA);
+		assertEquals(0.0,jbShop.getDiscount(),DELTA);
 
 	}
 }

@@ -37,6 +37,15 @@ public class Prices {
 		  }
 		return totPrice2;
 	}
+	public static double ListToDiscountTotal(List<String> MyList)
+	{
+		double totPrice2 = 0;
+		for (String parameter : MyList) {
+			totPrice2 += Prices.GetPrice(parameter);
+		  }
+		
+		return totPrice2;
+	}
 	public static int ListCountItem(List<String> MyList,String MyOffer)
 	{
 		int theCount = 0;

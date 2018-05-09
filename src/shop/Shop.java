@@ -6,11 +6,9 @@ import java.util.List;
 
 public class Shop {
 	static List<String> PurchasedItems = new ArrayList<String>();
-	private static double FinalTot;
-	private static double DiscountTot;
 	static NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	static double DiscountTot = 0.0;
 
-	static int xForxItems = 0;
 	static String OfferItem = null;
 	public static void main(String[] args) {
 		for (String fruit : args) {
@@ -18,14 +16,7 @@ public class Shop {
 		  }
 		System.out.println("Purchased => " + PurchasedItems);
 		System.out.println("Before Offers => " + formatter.format(Prices.ListToTotal(PurchasedItems)));
-		
-        xForxItems = 2;
-        OfferItem = "Apple";
-		DiscountTot += Prices.Discounter(PurchasedItems,xForxItems,OfferItem);		
-
-        xForxItems = 3;
-        OfferItem = "Orange";
-		DiscountTot += Prices.Discounter(PurchasedItems,xForxItems,OfferItem);		
+		DiscountTot = getDiscount();
 
 		System.out.println("Final Discount => " + formatter.format(DiscountTot));
 		System.out.println("Final Price => " + formatter.format(Prices.ListToTotal(PurchasedItems)-DiscountTot));
@@ -44,9 +35,19 @@ public class Shop {
 	{
 	    return this.PurchasedItems.size();
 	}
-	public static double getFinalPrice() 
+	public static double getDiscount() 
 	{
-	    return Prices.ListToTotal(PurchasedItems) - DiscountTot;	    
+		int xForxItems = 0;
+		double ReturnDiscountTot = 0.0;
+        xForxItems = 2;
+        OfferItem = "Apple";
+        ReturnDiscountTot += Prices.Discounter(PurchasedItems,xForxItems,OfferItem);		
+
+        xForxItems = 3;
+        OfferItem = "Orange";
+        ReturnDiscountTot += Prices.Discounter(PurchasedItems,xForxItems,OfferItem);	
+		
+	    return ReturnDiscountTot;	    
 	}
 }
 
